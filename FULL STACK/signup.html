@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>SIGN-UP</h1>
+    <form action="#" method="post" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+        <br>
+
+        <label for="city">City:</label>
+        <select id="city" name="city" required>
+            <option value="select">Select City</option>
+            <option value="newyork">New York</option>
+            <option value="london">London</option>
+            <option value="tokyo">Tokyo</option>
+       
+        </select>
+        <br>
+        <label for="mobile">Mobile:</label>
+        <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+        <small>Enter a 10-digit phone number.</small>
+        <br>
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other" required>
+        <label for="other">Other</label>
+        <br>
+
+        <label>Hobbies:</label>
+        <input type="checkbox" id="reading" name="hobby" value="reading">
+        <label for="reading">Reading</label>
+        <input type="checkbox" id="sports" name="hobby" value="sports">
+        <label for="sports">Sports</label>
+        <input type="checkbox" id="traveling" name="hobby" value="traveling">
+        <label for="traveling">Traveling</label>
+        <!-- Add more checkboxes for other hobbies -->
+        <br>
+        <input type="submit" value="Register">
+        <br>
+    </form>
+
+</body>
+</html>

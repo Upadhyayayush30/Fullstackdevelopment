@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    hii everyone 
+    <div style="text-align: center;">
+        <form action="/two.html" >
+            <input type="text" placeholder="Enter the Name "> <br>
+            <input type="number" placeholder="enter the phone number" ><br>
+            <input type="date" placeholder="enter the phone number" ><br>
+            <label> Choose a Gender 
+                <select id="cars">
+                    <option value="volvo">Male</option>
+                    <option value="saab">Female</option>
+                    <option value="opel">don't know</option>
+                    <option value="audi">helicopter</option>
+                  </select>
+                 </label>
+            <br><input type="submit">
+        </form>

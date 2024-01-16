@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Examples</title>
+
+    <!-- Internal CSS -->
+    <style>
+        .internal-style {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Inline CSS -->
+<p style="color: red; font-style: italic;">This is an example of inline CSS.</p>
+
+<!-- Internal CSS -->
+<p class="internal-style">This is an example of internal CSS.</p>
+
+
+<div id="output"></div>
+
+<script>
+    
+    var outputDiv = document.getElementById("output");
+
+    
+    var internalStyle = window.getComputedStyle(document.querySelector('.internal-style'));
+
+    
+    outputDiv.textContent = "Internal CSS Computed Style: color - " + internalStyle.color + ", font-weight - " + internalStyle.fontWeight;
+</script>
+
+</body>
+</html>

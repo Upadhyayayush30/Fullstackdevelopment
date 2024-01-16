@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP vs HTTPS Example</title>
+</head>
+<body>
+
+<h2>HTTP Example</h2>
+<button onclick="makeHTTPRequest('http://www.booking.com/?aid=1593513&label=webslice1819'
+<h2>HTTPS Example</h2>
+<button onclick="makeHTTPRequest('https://www.booking.com/?aid=1593513&label=webslice1819'
+<script>
+    function makeHTTPRequest(url) {
+        // Simulating an HTTP request using XMLHttpRequest
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    alert("HTTP Request successful!");
+                } else {
+                    alert("HTTP Request failed with status: " + xhr.status);
+                }
+            }
+        };
+        xhr.send();
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Address Fields</title>
+</head>
+<body>
+    <h1>Mailing Address</h1>
+    <textarea id="mailingAddress" rows="4" cols="50"></textarea><br>
+
+    <h1>Billing Address</h1>
+    <textarea id="billingAddress" rows="4" cols="50"></textarea><br>
+
+    
+
+    <input type="checkbox" id="sameAddress" onchange="sameAddressChecked()">
+    <label for="sameAddress">Billing Address is same as Mailing Address</label>
+
+    <script>
+        function sameAddressChecked() {
+            var isChecked = document.getElementById("sameAddress").checked;
+            if (isChecked) {
+                var mailingAddress = document.getElementById("mailingAddress").value;
+                document.getElementById("billingAddress").value = mailingAddress;
+            }
+        }
+    </script>
+</body>
+</html>

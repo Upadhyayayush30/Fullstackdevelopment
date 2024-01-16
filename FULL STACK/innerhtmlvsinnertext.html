@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML vs innerText Example</title>
+</head>
+<body>
+
+<!-- HTML Content -->
+<div id="exampleDiv">
+    <p>This is <strong>HTML</strong> content.</p>
+</div>
+
+<!-- Buttons to show the difference -->
+<button onclick="showInnerHTML()">Show innerHTML</button>
+<button onclick="showInnerText()">Show innerText</button>
+
+<!-- Output area -->
+<div id="output"></div>
+
+<script>
+    function showInnerHTML() {
+        var element = document.getElementById("exampleDiv");
+        var outputDiv = document.getElementById("output");
+
+        // Set the output to the HTML content using innerHTML
+        outputDiv.textContent = "innerHTML Output: " + element.innerHTML;
+    }
+
+    function showInnerText() {
+        var element = document.getElementById("exampleDiv");
+        var outputDiv = document.getElementById("output");
+
+        // Set the output to the plain text content using innerText
+        outputDiv.textContent = "innerText Output: " + element.innerText;
+    }
+</script>
+
+</body>
+</html>
