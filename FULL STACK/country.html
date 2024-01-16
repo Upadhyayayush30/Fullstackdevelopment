@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country, State, and City Selection</title>
+</head>
+<body>
+
+    <h2>Select Country, State, and City</h2>
+
+    <form>
+        <label for="country">Country:</label>
+        <select id="country" onchange="updateStatesAndCities()">
+            <option value="">Select Country</option>
+            <option value="india">India</option>
+            <option value="nepal">Nepal</option>
+            <option value="usa">USA</option>
+        </select>
+
+        <br>
+
+        <label for="state">State:</label>
+        <select id="state" onchange="updateCities()" disabled>
+            <option value="">Select State</option>
+        </select>
+
+        <br>
+
+        <label for="city">City:</label>
+        <select id="city" disabled>
+            <option value="">Select City</option>
+        </select>
+    </form>
+
+    <script>
+        // Define states and cities for each country
+        const countryData = {
+            india: {
+                states: ['Maharashtra', 'Tamil Nadu', 'Karnataka'],
+                cities: {
+                    maharashtra: ['Mumbai', 'Pune', 'Nagpur'],
+                    tamilnadu: ['Chennai', 'Coimbatore', 'Madurai'],
+                    karnataka: ['Bangalore', 'Mysore', 'Hubli']
+                }
+            },
+            nepal: {
+                states: ['Bagmati', 'Gandaki', 'Lumbini'],
+                cities: {
+                    bagmati: ['Kathmandu', 'Bhaktapur', 'Patan'],
+                    gandaki: ['Pokhara', 'Lamjung', 'Baglung'],
+                    lumbini: ['Lumbini', 'Butwal', 'Siddharthanagar']
+                }
+            },
+            usa: {
+                states: ['California', 'Texas', 'New York'],
+                cities: {
+                    california: ['Los Angeles', 'San Francisco', 'San Diego'],
+                    texas: ['Houston', 'Dallas', 'Austin'],
+                    newyork: ['New York City', 'Buffalo', 'Albany']
+                }
+            }
+        };
+
+        // Function to update the state dropdown based on the selected country
+        function updateStatesAndCities() {
+            var countrySelect = document.getElementById('country');
+            var stateSelect = document.getElementById('state');
+            var citySelect = document.getElementById('city');
+
+            // Clear previous options
+            stateSelect.innerHTML = '<option value="">Select State</option>';
+            citySelect.innerHTML = '<option value="">Select City</option>';
+
+            var selectedCountry = countrySelect.value;
+
+            if (selectedCountry) {
+                // Enable state dropdown
+                stateSelect.disabled = false;
+
+                // Populate state dropdown
+                countryData[selectedCountry].states.forEach(function(state) {
+                    var option = document.createElement('option');
+                    option.value = state.toLowerCase();
+                    option.textContent = state;
+                    stateSelect.appendChild(option);
+                });
+            } else {
+                // Disable state and city dropdowns if no country is selected
+                stateSelect.disabled = true;
+                citySelect.disabled = true;
+            }
+        }
+
+        // Function to update the city dropdown based on the selected state
+        function updateCities() {
+            var countrySelect = document.getElementById('country');
+            var stateSelect = document.getElementById('state');
+            var citySelect = document.getElementById('city');
+
+            // Clear previous options
+            citySelect.innerHTML = '<option value="">Select City</option>';
+
+            var selectedCountry = countrySelect.value;
+            var selectedState = stateSelect.value;
+
+            if (selectedCountry && selectedState) {
+                // Enable city dropdown
+                citySelect.disabled = false;
+
+                // Populate city dropdown
+                countryData[selectedCountry].cities[selectedState].forEach(function(city) {
+                    var option = document.createElement('option');
+                    option.value = city.toLowerCase();
+                    option.textContent = city;
+                    citySelect.appendChild(option);
+                });
+            } else {
+                // Disable city dropdown if no country or state is selected
+                citySelect.disabled = true;
+            }
+        }
+    </script>
+
+</body>
+</html>
