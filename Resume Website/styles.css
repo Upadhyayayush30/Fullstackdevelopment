@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@200;400;600;800&display=swap");
+
+html, body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #e3fdf5, #ffe6fa);
+}
+
+#resume {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 12px 12px 0 0;
+}
+
+.header-content h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 3.5rem;
+    margin: 0;
+    color: #333;
+}
+
+.header-content h2 {
+    font-size: 1.8rem;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.contact-info a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #004b99;
+    text-decoration: underline;
+}
+
+.details {
+    padding: 30px 0;
+}
+
+.section-block {
+    margin-bottom: 40px;
+}
+
+.section-block h3 {
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+    color: #4e567e;
+    border-bottom: 2px solid #6c757d;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.section-block ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section-block ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #333;
+    padding-left: 20px;
+    position: relative;
+}
+
+.section-block ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #4e567e;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    border-top: 2px solid #ddd;
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    border-radius: 0 0 12px 12px;
+}
+
+footer p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #resume {
+        padding: 20px;
+    }
+
+    .header-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .header-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .section-block h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .header-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .contact-info p, .section-block ul li {
+        font-size: 0.9rem;
+    }
+}
